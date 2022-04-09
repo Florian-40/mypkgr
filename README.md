@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of mypkgr is to …
+The goal of mypkgr is to calculate values of multivariate gaussian
+density.
 
 ## Installation
 
@@ -25,6 +26,13 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(mypkgr)
 ## basic example code
+mvnpdf(x=matrix(c(1.96,-0.5), ncol=2), Log=FALSE)
+#> $x
+#>      [,1] [,2]
+#> [1,] 1.96 -0.5
+#> 
+#> $y
+#> [1] 0.05844094 0.35206533
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
