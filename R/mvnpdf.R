@@ -37,6 +37,7 @@ mvnpdf <- function(x, mean =  rep(0, nrow(x)),
   }
 
   res<-list(x=x, y=y)
+  class(res) <- "mvnpdf"
   return(res)
 }
 
@@ -47,6 +48,7 @@ mvnpdf <- function(x, mean =  rep(0, nrow(x)),
 #' @param ... graphical parameters passed to \code{plot()} function.
 #'
 #' @return Nothing is returned, only a plot is given
+#' @importFrom graphics plot
 #' @export
 #'
 #' @examples

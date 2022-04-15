@@ -11,7 +11,7 @@ density.
 
 ## Installation
 
-You can install the development version of mypkgr from
+You can install the development version of `mypkgr` from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -23,9 +23,10 @@ devtools::install_github("Florian-40/mypkgr")
 
 This is a basic example which shows you how to solve a common problem:
 
+### Univariate density
+
 ``` r
 library(mypkgr)
-## basic example code
 mvnpdf(x=matrix(c(1.96,-0.5), ncol=2), Log=FALSE)
 #> $x
 #>      [,1] [,2]
@@ -33,31 +34,32 @@ mvnpdf(x=matrix(c(1.96,-0.5), ncol=2), Log=FALSE)
 #> 
 #> $y
 #> [1] 0.05844094 0.35206533
+#> 
+#> attr(,"class")
+#> [1] "mvnpdf"
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+### Bivariate density
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+mvnpdf(x=matrix(rep(1.96,2),nrow=2, ncol=1),Log=FALSE)
+#> $x
+#>      [,1]
+#> [1,] 1.96
+#> [2,] 1.96
+#> 
+#> $y
+#> [1] 0.003415344
+#> 
+#> attr(,"class")
+#> [1] "mvnpdf"
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+### Graphical representation.
 
-You can also embed plots, for example:
+``` r
+pdfvalues <- mvnpdf(x=matrix(seq(-3,3, by=0.1), nrow=1), Log=FALSE)
+plot(pdfvalues)
+```
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
