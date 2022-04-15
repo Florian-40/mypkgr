@@ -1,5 +1,5 @@
 Package: mypkgr
-Title: My 1st package.
+Title: My 1st package
 Version: 0.0.0.9000
 Authors@R: 
     person("Florian", "Robert", , "florian.robert40@live.com", role = c("aut", "cre"),
