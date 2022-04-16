@@ -16,4 +16,5 @@ Imports:
     mvtnorm,
     Rcpp
 LinkingTo: 
-    Rcpp
+    Rcpp,
+    RcppArmadillo
