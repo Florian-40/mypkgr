@@ -4,6 +4,9 @@
 # mypkgr
 
 <!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.com/Florian-40/mypkgr.svg?branch=master)](https://travis-ci.com/Florian-40/mypkgr)
 <!-- badges: end -->
 
 The goal of mypkgr is to calculate values of multivariate gaussian
