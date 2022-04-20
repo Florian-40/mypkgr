@@ -10,7 +10,7 @@ status](https://travis-ci.com/Florian-40/mypkgr.svg?branch=master)](https://trav
 <!-- badges: end -->
 
 The goal of mypkgr is to calculate values of multivariate gaussian
-density.
+density and learning how to build R package.
 
 ## Installation
 
@@ -66,3 +66,28 @@ plot(pdfvalues)
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+## `C++`functions.
+
+To use `C++` function, we use the code below :
+
+``` r
+Rcpp::sourceCpp("src/timesTwo.cpp")
+#> 
+#> > timesTwo(42)
+#> [1] 84
+timesTwo(12.5)
+#> [1] 25
+```
+
+And for inversion matrix :
+
+``` r
+Rcpp::sourceCpp("src/invC.cpp")
+A<-matrix(c(2,4,7,8,9,5,6,5,4), nrow=3, ncol=3)
+invC(A)
+#>            [,1]        [,2]       [,3]
+#> [1,] -0.1309524  0.02380952  0.1666667
+#> [2,] -0.2261905  0.40476190 -0.1666667
+#> [3,]  0.5119048 -0.54761905  0.1666667
+```

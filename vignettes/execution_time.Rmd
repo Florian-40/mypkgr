@@ -1,0 +1,152 @@
+---
+title: "execution_time"
+output: 
+  rmarkdown::html_vignette: 
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{execution_time}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.height=5, 
+  fig.width = 7
+)
+```
+
+```{r setup}
+library(mypkgr)
+library(microbenchmark)
+library(ggplot2)
+```
+
+## Comparison with our microbenchmark package.
+
+You can find microbenchmark package on my Git-Hub page : <https://github.com/Florian-40/microbenchmark.git>
+
+
+```{r}
+mb <- microbenchmark(mvtnorm::dmvnorm(rep(1.96, 2)),
+                     mvnpdf(x=matrix(rep(1.96,2)), Log=FALSE),
+                     times=1000L)
+
+mb
+expression<-c('dmvnorm', 'mvnpdf')
+autoplot(mb, expression, breaks=c(0.1,1), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1)))
+```
+
+And with multidimensionnal, we get :
+```{r}
+n <- 100
+mb <- microbenchmark(mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2)),
+                     mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     times=100L)
+mb
+expression<-c('dmvnorm', 'mvnpdf')
+autoplot(mb, expression, breaks=c(0.1,1), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1)))
+```
+
+
+## Profiling
+
+By using this lines in terminal, we can check profiling of the code : 
+```{r, eval=FALSE}
+profvis::profvis({
++ n <- 10e4
++ pdfval <- mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE)
++ })
+```
+
+### `mvnpdfsmart`function.
+
+We can use new function `mvnpdfmart` and check profile with similar code : 
+```{r, eval=FALSE}
+profvis::profvis({
++ n <- 10e4
++ pdfval <- mvnpdfsmart(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE)
++ })
+```
+
+We can compare results with a `microbenchmark` :
+```{r}
+n <- 1000
+mb <- microbenchmark(mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2)),
+                     mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfsmart(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     times=100L)
+mb
+expression<-c('dmvnorm', 'mvnpdf', 'mvnpdfsmart')
+autoplot(mb, expression, breaks=c(0.1,1), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1)))
+```
+
+### `mvnpdfoptim` function. 
+
+We can use new function `mvnpdfmart` and check profile with similar code : 
+```{r, eval=FALSE}
+profvis::profvis({
++ n <- 10e4
++ pdfval <- mvnpdfoptim(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE)
++ })
+```
+
+We can compare all results with a `microbenchmark`:
+```{r}
+n <- 1000
+mb <- microbenchmark(mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2)),
+                     mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfsmart(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfoptim(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     times=100L)
+mb
+expression<-c('dmvnorm', 'mvnpdf', 'mvnpdfsmart', 'mvnpdfoptim')
+autoplot(mb, expression, breaks=c(0.1,1), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1)))
+```
+
+## Using Rccp Armadillo functions. 
+
+We write a better inversion matrix with C++ language and we include it in `mvnpdfsmart`. Thus, we get microbenchmark : 
+```{r}
+n <- 1000
+mb <- microbenchmark(mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2)),
+                     mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfsmart(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfoptim(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdf_invC(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     times=100L)
+mb
+expression<-c('dmvnorm', 'mvnpdf', 'mvnpdfsmart', 'mvnpdfoptim', 'mvnpdf_invC')
+autoplot(mb, expression, breaks=c(0.1,1), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1)))
+```
+
+Now, use complete implementation of `mvnpdfsmart` in C++.
+
+
+```{r}
+Rcpp::sourceCpp("/Users/florianrobert/R/mypkgr/src/mvnpdfC.cpp")
+n <- 1000
+mb <- microbenchmark(mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2)),
+                     mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfsmart(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfoptim(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdf_invC(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
+                     mvnpdfC(x=matrix(1.96, nrow = 2, ncol = n), mean = rep(0, 2), varcovM = diag(2), Log=FALSE),
+                     times=100L)
+mb
+expression<-c('dmvnorm', 'mvnpdf', 'mvnpdfsmart', 'mvnpdfoptim', 'mvnpdf_invC', 'mvnpdfC')
+autoplot(mb, expression, breaks=c(0.1,1, 10), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1), seq(1,10,1)))
+```
+
+## Parallel code
+
+```{r}
+mb <- microbenchmark(log_par(1:100), log_seq(1:100), times=50)
+
+expression <- c('log_par','log_seq')
+autoplot(mb, expression, breaks=c(0.1,1, 10), minor_breaks=c(seq(0,0.1,0.01),seq(0.1,1,0.1), seq(1,10,1)))
+```
+
+

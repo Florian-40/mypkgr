@@ -10,9 +10,15 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Suggests: 
+    knitr,
+    ggplot2,
+    microbenchmark,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
+    doParallel,
+    foreach,
     mvtnorm,
     Rcpp
 LinkingTo: 
@@ -20,3 +26,4 @@ LinkingTo:
     RcppArmadillo
 URL: https://github.com/Florian-40/mypkgr
 BugReports: https://github.com/Florian-40/mypkgr/issues
+VignetteBuilder: knitr

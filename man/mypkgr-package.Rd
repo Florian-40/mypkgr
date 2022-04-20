@@ -8,6 +8,14 @@
 \description{
 What the package does (one paragraph).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/Florian-40/mypkgr}
+  \item Report bugs at \url{https://github.com/Florian-40/mypkgr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Florian Robert \email{florian.robert40@live.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 
