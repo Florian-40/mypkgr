@@ -123,7 +123,7 @@ Now, use complete implementation of `mvnpdfsmart` in C++.
 
 
 ```{r}
-Rcpp::sourceCpp("/Users/florianrobert/R/mypkgr/src/mvnpdfC.cpp")
+Rcpp::sourceCpp("../src/mvnpdfC.cpp")
 n <- 1000
 mb <- microbenchmark(mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2)),
                      mvnpdf(x=matrix(1.96, nrow = 2, ncol = n), Log=FALSE),
@@ -139,6 +139,6 @@ autoplot(mb, expression)
 
 ## Parallel code
 
-
+We are going to learn why use parallel code.
 
 
