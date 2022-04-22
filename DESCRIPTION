@@ -12,7 +12,6 @@ RoxygenNote: 7.1.2
 Suggests: 
     knitr,
     ggplot2,
-    microbenchmark,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
@@ -20,8 +19,11 @@ Imports:
     devtools,
     doParallel,
     foreach,
+    microbenchmark,
     mvtnorm,
     Rcpp
+Remotes:
+    Florian-40/microbenchmark
 LinkingTo: 
     Rcpp,
     RcppArmadillo
