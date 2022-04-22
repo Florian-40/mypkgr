@@ -24,6 +24,7 @@ Imports:
 LinkingTo: 
     Rcpp,
     RcppArmadillo
-URL: https://github.com/Florian-40/mypkgr
+URL: https://github.com/Florian-40/mypkgr,
+    https://florian-40.github.io/mypkgr/
 BugReports: https://github.com/Florian-40/mypkgr/issues
 VignetteBuilder: knitr
