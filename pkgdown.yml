@@ -1,0 +1,10 @@
+pandoc: 2.17.1.1
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  execution_time: execution_time.html
+last_built: 2022-04-22T10:26Z
+urls:
+  reference: https://florian-40.github.io/mypkgr/reference
+  article: https://florian-40.github.io/mypkgr/articles
+
