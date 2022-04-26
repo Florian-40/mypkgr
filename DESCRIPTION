@@ -13,13 +13,13 @@ Suggests:
     knitr,
     ggplot2,
     rmarkdown,
+    microbenchmark,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
     devtools,
     doParallel,
     foreach,
-    microbenchmark,
     mvtnorm,
     Rcpp
 Remotes:
