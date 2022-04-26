@@ -13,7 +13,15 @@
 #' @examples 
 #' log_par(1:100)
 log_par <- function(x){
-  Ncpus <- parallel::detectCores() - 1
+  chk <- Sys.getenv("_R_CHECK_LIMIT_CORES_", "")
+  
+  if (nzchar(chk) && chk == "TRUE") {
+    # use 2 cores in CRAN/Travis/AppVeyor
+    Ncpus <- 2L
+  } else {
+    # use all cores in devtools::test()
+    Ncpus <- parallel::detectCores()-1
+  }
   cl <- parallel::makeCluster(Ncpus)
   doParallel::registerDoParallel(cl)
   i<-0
