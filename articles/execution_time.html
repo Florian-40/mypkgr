@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="mypkgr">
-<title>execution_time • mypkgr</title>
+<title>Comparaison des temps d'execution. • mypkgr</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="execution_time">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Comparaison des temps d'execution.">
 <meta property="og:description" content="mypkgr">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -41,7 +41,7 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/execution_time.html">execution_time</a>
+    <a class="dropdown-item" href="../articles/execution_time.html">Comparaison des temps d'execution.</a>
   </div>
 </li>
       </ul>
@@ -68,7 +68,7 @@
 
 <div class="row">
   <main id="main"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>execution_time</h1>
+      <img src="" class="logo" alt=""><h1>Comparaison des temps d'execution.</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/Florian-40/mypkgr/blob/HEAD/vignettes/execution_time.Rmd" class="external-link"><code>vignettes/execution_time.Rmd</code></a></small>
@@ -79,6 +79,21 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Florian-40/mypkgr" class="external-link">mypkgr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: usethis</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Florian-40/microbenchmark"</span><span class="op">)</span>
+<span class="co">#&gt; Using github PAT from envvar GITHUB_PAT</span>
+<span class="co">#&gt; Downloading GitHub repo Florian-40/microbenchmark@HEAD</span>
+<span class="co">#&gt; * checking for file ‘/tmp/Rtmp3hJpKq/remotes3546611b49d0/Florian-40-microbenchmark-c9b47c1/DESCRIPTION’ ... OK</span>
+<span class="co">#&gt; * preparing ‘microbenchmark’:</span>
+<span class="co">#&gt; * checking DESCRIPTION meta-information ... OK</span>
+<span class="co">#&gt; * cleaning src</span>
+<span class="co">#&gt; * running ‘cleanup’</span>
+<span class="co">#&gt; * checking for LF line-endings in source and make files and shell scripts</span>
+<span class="co">#&gt; * checking for empty or unneeded directories</span>
+<span class="co">#&gt; * building ‘microbenchmark_1.4.9.tar.gz’</span>
+<span class="co">#&gt; Installing package into '/home/runner/work/_temp/Library'</span>
+<span class="co">#&gt; (as 'lib' is unspecified)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Florian-40/microbenchmark/" class="external-link">microbenchmark</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></code></pre></div>
 <div class="section level2">
@@ -92,12 +107,12 @@
 
 <span class="va">mb</span>
 <span class="co">#&gt; Unit: microseconds</span>
-<span class="co">#&gt;                                           expr  min   lq    mean median   uq</span>
-<span class="co">#&gt;                 mvtnorm::dmvnorm(rep(1.96, 2)) 40.6 42.3 68.8362   43.9 44.9</span>
-<span class="co">#&gt;  mvnpdf(x = matrix(rep(1.96, 2)), Log = FALSE) 36.5 38.3 42.4607   39.5 40.4</span>
+<span class="co">#&gt;                                           expr  min    lq     mean median    uq</span>
+<span class="co">#&gt;                 mvtnorm::dmvnorm(rep(1.96, 2)) 63.2 73.20 103.0773   80.0 88.35</span>
+<span class="co">#&gt;  mvnpdf(x = matrix(rep(1.96, 2)), Log = FALSE) 55.2 65.65  76.8534   70.9 78.25</span>
 <span class="co">#&gt;      max neval</span>
-<span class="co">#&gt;  24800.5  1000</span>
-<span class="co">#&gt;   2431.2  1000</span>
+<span class="co">#&gt;  20613.7  1000</span>
+<span class="co">#&gt;   1702.4  1000</span>
 <span class="va">expression</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'dmvnorm'</span>, <span class="st">'mvnpdf'</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
@@ -112,11 +127,11 @@
 <span class="va">mb</span>
 <span class="co">#&gt; Unit: microseconds</span>
 <span class="co">#&gt;                                                       expr   min     lq    mean</span>
-<span class="co">#&gt;         mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))  46.0  48.45  54.362</span>
-<span class="co">#&gt;  mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 560.8 573.55 592.851</span>
-<span class="co">#&gt;  median     uq   max neval</span>
-<span class="co">#&gt;    52.2  57.05 143.5   100</span>
-<span class="co">#&gt;   584.2 598.00 739.2   100</span>
+<span class="co">#&gt;         mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))  73.3  80.65  93.405</span>
+<span class="co">#&gt;  mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 621.5 648.10 698.946</span>
+<span class="co">#&gt;  median     uq    max neval</span>
+<span class="co">#&gt;    87.4  95.10  280.2   100</span>
+<span class="co">#&gt;   669.3 703.55 2615.9   100</span>
 <span class="va">expression</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'dmvnorm'</span>, <span class="st">'mvnpdf'</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
@@ -150,13 +165,13 @@
 <span class="va">mb</span>
 <span class="co">#&gt; Unit: microseconds</span>
 <span class="co">#&gt;                                                            expr    min      lq</span>
-<span class="co">#&gt;              mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))   73.9   81.75</span>
-<span class="co">#&gt;       mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 6669.8 6768.90</span>
-<span class="co">#&gt;  mvnpdfsmart(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 4806.7 4918.45</span>
+<span class="co">#&gt;              mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))  114.1  131.90</span>
+<span class="co">#&gt;       mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 8038.3 8579.25</span>
+<span class="co">#&gt;  mvnpdfsmart(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 5000.6 5454.35</span>
 <span class="co">#&gt;      mean  median      uq     max neval</span>
-<span class="co">#&gt;   111.150  106.60  122.50   383.8   100</span>
-<span class="co">#&gt;  7331.704 6852.00 6987.60 14760.7   100</span>
-<span class="co">#&gt;  5047.874 4957.05 5030.45  8421.9   100</span>
+<span class="co">#&gt;   194.642  181.55  216.75  1121.8   100</span>
+<span class="co">#&gt;  9402.443 8794.65 9172.20 18258.9   100</span>
+<span class="co">#&gt;  6368.446 5605.20 5947.00 13936.6   100</span>
 <span class="va">expression</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'dmvnorm'</span>, <span class="st">'mvnpdf'</span>, <span class="st">'mvnpdfsmart'</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
@@ -183,15 +198,15 @@
 <span class="va">mb</span>
 <span class="co">#&gt; Unit: microseconds</span>
 <span class="co">#&gt;                                                            expr    min      lq</span>
-<span class="co">#&gt;              mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))   72.7  101.80</span>
-<span class="co">#&gt;       mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 6661.9 6757.55</span>
-<span class="co">#&gt;  mvnpdfsmart(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 4821.9 4901.80</span>
-<span class="co">#&gt;  mvnpdfoptim(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 3762.7 3871.50</span>
-<span class="co">#&gt;      mean  median      uq     max neval</span>
-<span class="co">#&gt;   117.322  113.25  127.20   353.9   100</span>
-<span class="co">#&gt;  6875.859 6784.15 6822.40 10285.0   100</span>
-<span class="co">#&gt;  5266.260 4934.25 4967.40 12787.2   100</span>
-<span class="co">#&gt;  4143.047 4013.95 4068.35  7445.0   100</span>
+<span class="co">#&gt;              mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))  111.4  137.90</span>
+<span class="co">#&gt;       mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 8041.4 8404.85</span>
+<span class="co">#&gt;  mvnpdfsmart(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 5107.1 5358.30</span>
+<span class="co">#&gt;  mvnpdfoptim(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 3899.5 4129.80</span>
+<span class="co">#&gt;      mean  median      uq      max neval</span>
+<span class="co">#&gt;   176.643  180.00  204.20    362.3   100</span>
+<span class="co">#&gt;  9205.713 8677.70 9090.40  16785.4   100</span>
+<span class="co">#&gt;  7078.850 5529.45 5848.95 128585.3   100</span>
+<span class="co">#&gt;  4897.239 4256.00 4450.10  15084.7   100</span>
 <span class="va">expression</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'dmvnorm'</span>, <span class="st">'mvnpdf'</span>, <span class="st">'mvnpdfsmart'</span>, <span class="st">'mvnpdfoptim'</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
@@ -214,17 +229,17 @@
 <span class="va">mb</span>
 <span class="co">#&gt; Unit: microseconds</span>
 <span class="co">#&gt;                                                            expr    min      lq</span>
-<span class="co">#&gt;              mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))   74.8  107.50</span>
-<span class="co">#&gt;       mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 6677.7 6789.85</span>
-<span class="co">#&gt;  mvnpdfsmart(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 4816.4 4921.45</span>
-<span class="co">#&gt;  mvnpdfoptim(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 3754.7 3876.00</span>
-<span class="co">#&gt;  mvnpdf_invC(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 4810.5 4916.65</span>
+<span class="co">#&gt;              mvtnorm::dmvnorm(matrix(1.96, nrow = n, ncol = 2))  112.8  167.55</span>
+<span class="co">#&gt;       mvnpdf(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 8070.7 8492.50</span>
+<span class="co">#&gt;  mvnpdfsmart(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 4999.0 5484.55</span>
+<span class="co">#&gt;  mvnpdfoptim(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 3953.4 4227.70</span>
+<span class="co">#&gt;  mvnpdf_invC(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE) 5114.1 5451.15</span>
 <span class="co">#&gt;      mean  median      uq     max neval</span>
-<span class="co">#&gt;   116.721  116.55  128.70   264.3   100</span>
-<span class="co">#&gt;  6915.056 6828.15 6892.25  9636.8   100</span>
-<span class="co">#&gt;  5054.714 4970.20 5003.10  7747.4   100</span>
-<span class="co">#&gt;  4211.728 4012.40 4090.35  7679.6   100</span>
-<span class="co">#&gt;  5233.144 4961.35 5030.30 12980.8   100</span>
+<span class="co">#&gt;   198.911  194.95  216.70   447.1   100</span>
+<span class="co">#&gt;  9103.868 8680.05 9076.45 15987.4   100</span>
+<span class="co">#&gt;  6334.742 5659.85 5831.35 16775.6   100</span>
+<span class="co">#&gt;  4991.840 4363.20 4561.55 14333.4   100</span>
+<span class="co">#&gt;  6093.486 5613.50 5885.15 13621.8   100</span>
 <span class="va">expression</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'dmvnorm'</span>, <span class="st">'mvnpdf'</span>, <span class="st">'mvnpdfsmart'</span>, <span class="st">'mvnpdfoptim'</span>, <span class="st">'mvnpdf_invC'</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
@@ -250,13 +265,13 @@
 <span class="co">#&gt;                                        mvnpdfoptim(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE)</span>
 <span class="co">#&gt;                                        mvnpdf_invC(x = matrix(1.96, nrow = 2, ncol = n), Log = FALSE)</span>
 <span class="co">#&gt;  mvnpdfC(x = matrix(1.96, nrow = 2, ncol = n), mean = rep(0, 2),      varcovM = diag(2), Log = FALSE)</span>
-<span class="co">#&gt;     min      lq     mean  median     uq     max neval</span>
-<span class="co">#&gt;    72.9   99.35  114.338  115.20  130.9   223.9   100</span>
-<span class="co">#&gt;  6651.0 6737.90 7147.904 6778.85 6841.5 14736.4   100</span>
-<span class="co">#&gt;  4855.5 4901.80 5128.327 4930.05 4969.6  8023.1   100</span>
-<span class="co">#&gt;  3760.6 3890.35 4078.033 4006.85 4068.7  7257.1   100</span>
-<span class="co">#&gt;  4811.8 4887.50 5036.020 4920.15 4969.3  8150.8   100</span>
-<span class="co">#&gt;    34.4   44.85   64.849   49.55   54.0  1335.1   100</span>
+<span class="co">#&gt;     min      lq     mean  median      uq     max neval</span>
+<span class="co">#&gt;   117.1  152.70  194.936  186.50  215.75   650.4   100</span>
+<span class="co">#&gt;  7627.2 8397.55 9708.536 8835.15 9654.10 23144.3   100</span>
+<span class="co">#&gt;  4850.3 5308.05 6247.285 5613.60 5892.25 18052.2   100</span>
+<span class="co">#&gt;  3662.5 4161.70 4707.005 4338.95 4582.35 13037.8   100</span>
+<span class="co">#&gt;  4775.4 5292.55 6129.456 5616.85 5883.90 14594.2   100</span>
+<span class="co">#&gt;    48.4   63.10   96.326   72.75   84.90  1552.9   100</span>
 <span class="va">expression</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'dmvnorm'</span>, <span class="st">'mvnpdf'</span>, <span class="st">'mvnpdfsmart'</span>, <span class="st">'mvnpdfoptim'</span>, <span class="st">'mvnpdf_invC'</span>, <span class="st">'mvnpdfC'</span><span class="op">)</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
 <span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
@@ -266,7 +281,23 @@
 <div class="section level2">
 <h2 id="parallel-code">Parallel code<a class="anchor" aria-label="anchor" href="#parallel-code"></a>
 </h2>
-<p>We are going to learn why use parallel code.</p>
+<div class="section level3">
+<h3 id="st-simple-example-">1st simple example.<a class="anchor" aria-label="anchor" href="#st-simple-example-"></a>
+</h3>
+<p>Let’s try to calculate the logarithm of <span class="math inline">\(n\)</span> numbers.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/microbenchmark/man/microbenchmark.html" class="external-link">microbenchmark</a></span><span class="op">(</span><span class="fu"><a href="../reference/log_par.html">log_par</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span>, <span class="fu"><a href="../reference/log_seq.html">log_seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span>, times<span class="op">=</span><span class="fl">50</span><span class="op">)</span>
+<span class="va">mb</span>
+<span class="co">#&gt; Unit: microseconds</span>
+<span class="co">#&gt;            expr      min       lq       mean   median       uq      max neval</span>
+<span class="co">#&gt;  log_par(1:100) 382460.3 411480.4 421754.696 418697.8 430139.0 468788.9    50</span>
+<span class="co">#&gt;  log_seq(1:100)      2.2      2.8     17.208     10.8     12.7    351.4    50</span>
+<span class="va">expression</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'log_par'</span>, <span class="st">'log_seq'</span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot</a></span><span class="op">(</span><span class="va">mb</span>, <span class="va">expression</span><span class="op">)</span>
+<span class="co">#&gt; Scale for 'y' is already present. Adding another scale for 'y', which will</span>
+<span class="co">#&gt; replace the existing scale.</span></code></pre></div>
+<p><img src="execution_time_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
@@ -281,7 +312,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
