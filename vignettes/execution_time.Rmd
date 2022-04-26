@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 
 ```{r setup }
 library(mypkgr)
+library(devtools)
+devtools::install_github("Florian-40/microbenchmark")
 library(microbenchmark)
 library(ggplot2)
 ```

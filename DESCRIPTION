@@ -22,8 +22,6 @@ Imports:
     foreach,
     mvtnorm,
     Rcpp
-Remotes:
-    Florian-40/microbenchmark
 LinkingTo: 
     Rcpp,
     RcppArmadillo
