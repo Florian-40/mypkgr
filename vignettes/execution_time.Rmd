@@ -1,9 +1,9 @@
 ---
-title: "execution_time"
+title: "Comparaison des temps d'execution."
 output: 
   rmarkdown::html_vignette: 
 vignette: >
-  %\VignetteIndexEntry{execution_time}
+  %\VignetteIndexEntry{Execution times.}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -139,6 +139,17 @@ autoplot(mb, expression)
 
 ## Parallel code
 
-We are going to learn why use parallel code.
+### 1st simple example. 
+
+Let's try to calculate the logarithm of $n$ numbers. 
+
+```{r}
+mb <- microbenchmark(log_par(1:100), log_seq(1:100), times=50)
+mb
+expression <- c('log_par', 'log_seq')
+autolplot(mb)
+```
+
+
 
 

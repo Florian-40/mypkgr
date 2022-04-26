@@ -12,6 +12,7 @@ What the package does (one paragraph).
 Useful links:
 \itemize{
   \item \url{https://github.com/Florian-40/mypkgr}
+  \item \url{https://florian-40.github.io/mypkgr/}
   \item Report bugs at \url{https://github.com/Florian-40/mypkgr/issues}
 }
 

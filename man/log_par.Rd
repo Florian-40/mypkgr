@@ -15,3 +15,6 @@ logarithm of each coordinate of x
 \description{
 logarithm with parallel
 }
+\examples{
+log_par(1:100)
+}

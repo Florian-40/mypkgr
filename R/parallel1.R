@@ -3,10 +3,15 @@
 #' @param x a vector to calculate logarithm
 #' 
 #' @import foreach
+#' @importFrom parallel detectCores
+#' @importFrom parallel makeCluster
+#' @importFrom doParallel registerDoParallel
 #' 
 #' @return logarithm of each coordinate of x
 #' @export
 #' 
+#' @examples 
+#' log_par(1:100)
 log_par <- function(x){
   Ncpus <- parallel::detectCores() - 1
   cl <- parallel::makeCluster(Ncpus)
@@ -28,10 +33,10 @@ log_par <- function(x){
 #' log_seq(1:100)
 log_seq <- function(x){
   # try this yourself (spoiler alert: it is quite long...):
-  res <- numeric(length(x))
-  for(i in 1:length(x)){
-     res[i] <- log(x[i])
-   }
-  return(res)
-  #return(log(x))
+  #res <- numeric(length(x))
+  #for(i in 1:length(x)){
+     #res[i] <- log(x[i])
+  # }
+  #return(res)
+  return(log(x))
 }
